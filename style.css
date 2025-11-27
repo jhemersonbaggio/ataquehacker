@@ -1,170 +1,83 @@
-/* --- RESET --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", Arial, sans-serif;
-}
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Courier New", monospace; }
 
-/* --- BODY --- */
 body {
-  background: #eef1f7;
-  color: #333;
-  display: flex;
-  flex-direction: column;
+  background: #000;
+  color: #00ff55;
   min-height: 100vh;
+  display:flex;
+  flex-direction:column;
 }
 
-/* --- HEADER --- */
 header {
-  background: #4f46e5;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-align:center;
+  padding:30px 10px;
+  border-bottom:2px solid #00ff55;
+  background: rgba(0,255,85,0.05);
 }
 
-header h1 {
-  font-size: 32px;
-  font-weight: 700;
-}
+header h1 { font-size:2rem; }
+.subtitle { font-size:0.9rem; opacity:0.8; }
 
-.subtitle {
-  margin-top: 6px;
-  opacity: 0.9;
-}
+.container { width:90%; max-width:600px; margin:30px auto; }
 
-/* --- CONTAINER --- */
-.container {
-  max-width: 900px;
-  width: 90%;
-  margin: 30px auto;
-}
-
-/* --- CARD --- */
 .card {
-  background: white;
-  padding: 30px;
-  border-radius: 14px;
-  margin-bottom: 25px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.4s ease;
+  background: rgba(0,255,85,0.05);
+  border:1px solid #00ff55;
+  padding:20px;
+  margin-bottom:30px;
+  border-radius:10px;
+  backdrop-filter:blur(4px);
+  box-shadow:0 0 15px #00ff55;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.info-row { display:flex; justify-content:space-between; margin-bottom:15px; font-size:1rem; }
+
+.vida-bar { width:70%; height:18px; border:1px solid #00ff55; }
+#vidaFill { width:100%; height:100%; background:#00ff55; }
+
+#gameCanvas {
+  display:block;
+  margin:0 auto;
+  background:#001900;
+  border:2px solid #00ff55;
+  border-radius:10px;
+  box-shadow: inset 0 0 20px #00ff55;
+  position:relative;
 }
 
-.card h2 {
-  margin-bottom: 15px;
-  color: #4f46e5;
-  font-size: 22px;
+.overlay {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0; left:0;
+  background:rgba(0,0,0,0.85);
+  display:flex; justify-content:center; align-items:center;
 }
 
-/* --- FORM PERGUNTAS --- */
-.question {
-  margin-bottom: 18px;
-}
-
-.question label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #444;
-}
-
-.question select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #cfd5e1;
-  border-radius: 8px;
-  background: #f7f9fc;
-  font-size: 16px;
-  transition: 0.2s;
-}
-
-.question select:focus {
-  outline: none;
-  border-color: #4f46e5;
-  background: #ffffff;
-}
-
-/* --- BOTÃO --- */
 .btn {
-  display: inline-block;
-  width: 100%;
-  background: #4f46e5;
-  color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s;
-  margin-top: 12px;
-  text-align: center;
+  padding:12px 25px;
+  background:#00ff55;
+  color:#000;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  font-size:1.2rem;
+  border-radius:8px;
+  box-shadow:0 0 10px #00ff55;
 }
 
-.btn:hover {
-  background: #4338ca;
-}
+.btn:hover { background:#00cc44; }
 
-.btn:active {
-  transform: scale(0.98);
-}
-
-/* --- RESULTADO --- */
-#result {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-}
-
-#result strong {
-  color: #4f46e5;
-}
-
-/* --- FOOTER --- */
 footer {
-  margin-top: auto;
-  background: #4f46e5;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  font-size: 14px;
+  margin-top:auto;
+  text-align:center;
+  padding:15px;
+  font-size:0.9rem;
+  background: rgba(0,255,85,0.1);
+  border-top:1px solid #00ff55;
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (min-width: 760px) {
-  .question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .question label {
-    width: 70%;
-  }
-
-  .question select {
-    width: 25%;
-  }
-
-  .btn {
-    width: 40%;
-    margin: 0 auto;
-    display: block;
-  }
-
-  header h1 {
-    font-size: 36px;
-  }
+@media(max-width:480px){
+  header h1 { font-size:1.5rem; }
+  .btn { font-size:1rem; }
 }
